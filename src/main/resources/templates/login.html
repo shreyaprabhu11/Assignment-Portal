@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #e0f7fa, #fce4ec);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 80px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-header {
+            color: #1565c0;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: 500;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .btn-success {
+            background-color: #43a047;
+            border: none;
+            border-radius: 20px;
+            padding: 6px 20px;
+        }
+
+        .btn-success:hover {
+            background-color: #2e7d32;
+        }
+
+        .text-center a {
+            font-size: 14px;
+            color: #1565c0;
+        }
+
+        .alert-danger {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form class="login-container" th:action="@{/userLogin}" th:object="${user}" th:method="post">
+        <h2 class="login-header">Login</h2>
+
+        <div class="form-group">
+            <label for="uname">Username</label>
+            <input type="text" id="uname" th:field="*{username}" placeholder="Enter username" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="pswrd">Password</label>
+            <input type="password" id="pswrd" th:field="*{pswrd}" placeholder="Enter password" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-block">Login</button>
+
+        <div class="form-actions" style="display: flex; justify-content: space-between; align-items: center;">
+            <a th:href="@{/forgot-password}" style="color: #6f42c1; text-decoration: none;">Forgot Password?</a>
+            <button type="submit" class="btn">Login</button>
+        </div>
+
+        <div class="text-center mt-3">
+            <a th:href="@{/register}" style="text-decoration: none;">Don't have an account? Register</a>
+        </div>
+
+        <div th:if="${error}" class="alert alert-danger text-center mt-4" role="alert">
+            <span th:text="${error}"></span>
+        </div>
+
+
+    </form>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
