@@ -394,19 +394,6 @@ The application validates:
 
 ---
 
-# Screenshots
-
-Add screenshots of:
-
-- Login Page
-- Admin Dashboard
-- Student Dashboard
-- Create Assignment Page
-- Student Assignment List
-- Assignment Details
-
----
-
 # Author
 
 **Shreya M Prabhu**
