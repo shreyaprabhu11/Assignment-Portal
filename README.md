@@ -370,9 +370,6 @@ The application validates:
 
 # Future Enhancements
 
-- Assignment Submission
-- File Upload
-- PDF Upload
 - Email Notification
 - Marks Management
 - Faculty Module
