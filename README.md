@@ -19,8 +19,7 @@ A web-based Assignment Portal developed using Java Spring Boot that enables admi
 11. Application Workflow
 12. Security
 13. Future Enhancements
-14. Screenshots
-15. Author
+14. Author
 
 ---
 
